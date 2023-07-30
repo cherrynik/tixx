@@ -2,7 +2,10 @@
   "name": "@tixx/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve tixx",
+    "build": "nx build tixx"
+  },
   "private": true,
   "dependencies": {
     "@nx/next": "16.5.5",
