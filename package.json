@@ -11,13 +11,16 @@
     "@nx/next": "16.5.5",
     "@prisma/client": "^5.0.0",
     "@swc/helpers": "~0.5.0",
+    "@t3-oss/env-nextjs": "^0.6.0",
     "next": "13.4.1",
     "prisma": "^5.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-is": "18.2.0",
     "styled-components": "5.3.6",
-    "tslib": "^2.3.0"
+    "trpc": "^0.10.4",
+    "tslib": "^2.3.0",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@nx/cypress": "16.5.5",
