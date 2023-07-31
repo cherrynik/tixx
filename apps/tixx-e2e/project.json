@@ -1,20 +1,42 @@
 {
   "name": "tixx-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/tixx-e2e/src",
   "projectType": "application",
+  "sourceRoot": "apps/tixx-e2e/src",
   "targets": {
     "e2e": {
-      "executor": "@nx/cypress:cypress",
+      "executor": "@nxkit/playwright:test",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "cypressConfig": "apps/tixx-e2e/cypress.config.ts",
-        "devServerTarget": "tixx:serve:development",
-        "testingType": "e2e"
+        "outputPath": "dist/apps/tixx-e2e/test-results",
+        "playwrightConfig": "apps/tixx-e2e/playwright.config.ts",
+        "baseUrl": "https://example.com"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "tixx:serve:production"
+          "baseUrl": "https://example.com"
         }
+      }
+    },
+    "debug": {
+      "executor": "@nxkit/playwright:test",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "outputPath": "dist/apps/tixx-e2e/test-results",
+        "playwrightConfig": "apps/tixx-e2e/playwright.config.ts",
+        "baseUrl": "https://example.com",
+        "debug": true
+      },
+      "configurations": {
+        "production": {
+          "baseUrl": "https://example.com"
+        }
+      }
+    },
+    "show-report": {
+      "executor": "@nxkit/playwright:show-report",
+      "options": {
+        "reportPath": "dist/apps/tixx-e2e/playwright-report"
       }
     },
     "lint": {
@@ -25,6 +47,5 @@
       }
     }
   },
-  "tags": [],
-  "implicitDependencies": ["tixx"]
+  "tags": []
 }
