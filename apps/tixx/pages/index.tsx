@@ -1,4 +1,5 @@
 import { trpc } from '@tixx/utils/trpc';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 const StyledPage = styled.div`
@@ -8,7 +9,7 @@ const StyledPage = styled.div`
 
 export function Index() {
   const wassgud = trpc.wassgud.useQuery({
-    text: 'dawg'
+    text: 'dawg',
   }).data;
 
   if (!wassgud) {
@@ -24,9 +25,22 @@ export function Index() {
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
-            <h1>
+            <motion.h1
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              drag
+              dragConstraints={{
+                top: -50,
+                left: -50,
+                right: 50,
+                bottom: 50,
+              }}
+              style={{
+                cursor: 'grab'
+              }}
+            >
               {wassgud.yo}
-            </h1>
+            </motion.h1>
           </div>
 
           <div id="middle-content">
