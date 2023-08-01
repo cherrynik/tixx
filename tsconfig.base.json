@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@tixx/api/trpc": ["libs/api/trpc/src/index.ts"],
-      "@tixx/prisma": ["libs/prisma/src/index.ts"]
+      "@tixx/prisma": ["libs/prisma/src/index.ts"],
+      "@tixx/utils/trpc": ["libs/utils/trpc/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

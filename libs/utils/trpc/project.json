@@ -1,16 +1,16 @@
 {
-  "name": "api-trpc",
+  "name": "utils-trpc",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/api/trpc/src",
+  "sourceRoot": "libs/utils/trpc/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nx/js:swc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/api/trpc",
-        "main": "libs/api/trpc/src/index.ts",
-        "tsConfig": "libs/api/trpc/tsconfig.lib.json",
+        "outputPath": "dist/libs/utils/trpc",
+        "main": "libs/utils/trpc/src/index.ts",
+        "tsConfig": "libs/utils/trpc/tsconfig.lib.json",
         "assets": []
       }
     },
@@ -19,17 +19,17 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "libs/api/trpc/**/*.ts",
-          "libs/api/trpc/package.json"
+          "libs/utils/trpc/**/*.ts",
+          "libs/utils/trpc/package.json"
         ]
       }
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/libs/api/trpc"],
+      "outputs": ["coverage/libs/utils/trpc"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../../coverage/libs/api/trpc"
+        "reportsDirectory": "../../../coverage/libs/utils/trpc"
       }
     }
   },
