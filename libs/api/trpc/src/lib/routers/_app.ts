@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { procedure, router } from '../trpc';
 
 export const appRouter = router({
-  hello: procedure
+  wassgud: procedure
     .input(
       z.object({
         text: z.string(),
@@ -10,7 +10,7 @@ export const appRouter = router({
     )
     .query((opts) => {
       return {
-        greeting: `hello ${opts.input.text}`,
+        yo: `wassgud ${opts.input.text}`,
       };
     }),
 });
