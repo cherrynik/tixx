@@ -12,6 +12,8 @@ const nextConfig = {
     svgr: true,
   },
 
+  reactStrictMode: true,
+
   compiler: {
     // For other options, see https://styled-components.com/docs/tooling#babel-plugin
     styledComponents: true,
