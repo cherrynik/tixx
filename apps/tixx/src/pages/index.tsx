@@ -1,4 +1,4 @@
-import "primereact/resources/themes/soho-dark/theme.css";
+import 'primereact/resources/themes/soho-dark/theme.css';
 import { trpc } from '@tixx/utils/trpc';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
@@ -9,6 +9,8 @@ const StyledPage = styled.div`
   .page {
   }
 `;
+
+const Animated = motion(Button);
 
 export function Index() {
   const { t, ready } = useTranslation();
@@ -34,12 +36,9 @@ export function Index() {
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
-            <Button style={{
-              fontSize: '8px'
-            }} label='Sup?'/>
-            <motion.h1
+            <Animated
+              label={wassgud.yo}
               whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
               drag
               dragConstraints={{
                 top: -50,
@@ -50,9 +49,7 @@ export function Index() {
               style={{
                 cursor: 'grab',
               }}
-            >
-              {wassgud.yo}
-            </motion.h1>
+            />
           </div>
 
           <div id="middle-content">

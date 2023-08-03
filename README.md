@@ -9,3 +9,4 @@
 - Vitest/Jest
 - I18N
 - Primereact + Primeflex
+- Zustand + Immer
