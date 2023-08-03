@@ -3,7 +3,8 @@ import Head from 'next/head';
 import './styles.css';
 import { trpc } from '@tixx/utils/trpc';
 import { appWithTranslation } from 'next-i18next';
-import { i18nConfig } from '../next-i18next.config.mjs'
+import { i18nConfig } from '../../next-i18next.config.mjs';
+import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,7 +13,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to tixx!</title>
       </Head>
       <main className="app">
-        <Component {...pageProps} />
+        <PrimeReactProvider>
+          <Component {...pageProps} />
+        </PrimeReactProvider>
       </main>
     </>
   );

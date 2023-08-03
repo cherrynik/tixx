@@ -1,6 +1,8 @@
+import "primereact/resources/themes/soho-dark/theme.css";
 import { trpc } from '@tixx/utils/trpc';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
+import { Button } from 'primereact/button';
 import styled from 'styled-components';
 
 const StyledPage = styled.div`
@@ -32,6 +34,9 @@ export function Index() {
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
+            <Button style={{
+              fontSize: '8px'
+            }} label='Sup?'/>
             <motion.h1
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
