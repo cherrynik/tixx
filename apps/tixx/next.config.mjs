@@ -1,5 +1,6 @@
 //@ts-check
 import "./app/env/server.mjs"
+import "./app/env/client.mjs"
 import { composePlugins, withNx } from '@nx/next';
 
 /**
