@@ -1,6 +1,6 @@
 //@ts-check
-import "./app/env/server.mjs"
-import "./app/env/client.mjs"
+import '../../libs/utils/env/src/client.mjs'
+import '../../libs/utils/env/src/server.mjs'
 import { composePlugins, withNx } from '@nx/next';
 
 /**
@@ -16,6 +16,7 @@ const nextConfig = {
   compiler: {
     // For other options, see https://styled-components.com/docs/tooling#babel-plugin
     styledComponents: true,
+    removeConsole: true,
   },
 };
 
