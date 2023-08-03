@@ -1,5 +1,6 @@
 import { trpc } from '@tixx/utils/trpc';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
 import styled from 'styled-components';
 
 const StyledPage = styled.div`
@@ -8,9 +9,15 @@ const StyledPage = styled.div`
 `;
 
 export function Index() {
+  const { t, ready } = useTranslation();
+  // bindI18n: loaded is needed because of the reloadResources call
+  // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
+
   const wassgud = trpc.wassgud.useQuery({
     text: 'dawg',
   }).data;
+
+  console.log(ready, t('greeting'));
 
   if (!wassgud) {
     return <>Bruh im still trippin, yfm...</>;
@@ -36,7 +43,7 @@ export function Index() {
                 bottom: 50,
               }}
               style={{
-                cursor: 'grab'
+                cursor: 'grab',
               }}
             >
               {wassgud.yo}

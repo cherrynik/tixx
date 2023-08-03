@@ -2,6 +2,8 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
 import { trpc } from '@tixx/utils/trpc';
+import { appWithTranslation } from 'next-i18next';
+import { i18nConfig } from '../next-i18next.config.mjs'
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -16,4 +18,6 @@ function CustomApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default trpc.withTRPC(CustomApp);
+const AppWithTranslation = appWithTranslation(CustomApp, i18nConfig);
+
+export default trpc.withTRPC(AppWithTranslation);
