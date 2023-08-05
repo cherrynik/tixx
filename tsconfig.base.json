@@ -17,6 +17,10 @@
     "baseUrl": ".",
     "paths": {
       "@tixx/api/trpc": ["libs/api/trpc/src/index.ts"],
+      "@tixx/client/blocks": ["libs/client/blocks/src/index.ts"],
+      "@tixx/client/components": ["libs/client/components/src/index.ts"],
+      "@tixx/client/features": ["libs/client/features/src/index.ts"],
+      "@tixx/client/hooks": ["libs/client/hooks/src/index.ts"],
       "@tixx/prisma": ["libs/prisma/src/index.ts"],
       "@tixx/utils/env/*": ["libs/utils/env/src/*"],
       "@tixx/utils/trpc": ["libs/utils/trpc/src/index.ts"]
