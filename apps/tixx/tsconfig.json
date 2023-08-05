@@ -5,6 +5,7 @@
     "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
@@ -23,9 +24,7 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "../../apps/tixx/.next/types/**/*.ts",
-    "../../dist/apps/tixx/.next/types/**/*.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
   ],
   "exclude": [
     "node_modules",

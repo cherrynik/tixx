@@ -1,0 +1,37 @@
+{
+  "name": "utils-env",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/utils/env/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/utils/env",
+        "main": "libs/utils/env/src/index.ts",
+        "tsConfig": "libs/utils/env/tsconfig.lib.json",
+        "assets": ["libs/utils/env/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/utils/env/**/*.ts",
+          "libs/utils/env/package.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/libs/utils/env"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../../coverage/libs/utils/env"
+      }
+    }
+  },
+  "tags": []
+}

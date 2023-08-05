@@ -62,6 +62,20 @@
       "options": {
         "lintFilePatterns": ["apps/tixx/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "e2e": {
+      "executor": "@nxkit/playwright:test",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "outputPath": "dist/apps/tixx-e2e/test-results",
+        "playwrightConfig": "apps/tixx-e2e/playwright.config.ts",
+        "baseUrl": "https://example.com"
+      },
+      "configurations": {
+        "production": {
+          "baseUrl": "https://example.com"
+        }
+      }
     }
   },
   "tags": []
